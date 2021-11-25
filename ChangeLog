@@ -1,0 +1,506 @@
+Version 3.1.x:
+
+* Removed cacert.pem (should be handled by certifi package now).
+* Launcher settings plugins page did not respect new FS-UAE/System directory.
+* Remove empty "Directories" settings page.
+* Fix disappearing configs when base_dir is specified with a trailing slash.
+* Prefer $HOME/FS-UAE if it exists, otherwise use $DOCUMENTS/FS-UAE.
+* Added lots of game controller configs.
+* Support ~/ when  overriding base_dir in config file + create dir if needed.
+* Fix layout issues caused by floats not being acceptedby pyqt5 any more.
+* Fix loading WHDLoad .lha archives on Windows.
+* Some changes to how/where plugins are found.
+* Build system update.
+* Official builds created with pyinstaller.
+* Better support for High-DPI displays in Windows.
+
+Version 3.0.5:
+
+* Packaging change to satisfy Apple's changed notarization process (sigh).
+* Workaround for old file database entries with incorrect \ escape.
+
+Version 3.0.4:
+
+* Filename escaping for FS-UAE and .uaem comments when using .lha files as HDs.
+* Fixed bug in escaping of \ in archive.py.
+
+Version 3.0.3:
+
+* Fixed crash when starting the Launcher in a KDE environment.
+
+Version 3.0.2:
+
+* Another fix for global WHDLoad quit key.
+* Fixed a misleading warning when cyberstorm ROM was not found (3.0.1).
+
+Version 3.0.1:
+
+* Scanner bug prevented Conquests of the Longbow WHDLoad to be recognized.
+* The correct kickstart wasn't always loaded.
+* Cloanto ROMs were not always decrypted.
+* Fix for global WHDLoad quit key.
+
+Version 3.0.0:
+
+* Fixes a problem when launching WHDLoad archived games with OpenRetro
+  database enabled and with a matching orhaned variant in the database.
+* Imported updated translations from crowdin.com.
+
+Version 2.9.12dev:
+
+* Fixed recently introduced bug when downloading files via cache.
+
+Version 2.9.11dev:
+
+* Plugins can provide files for offline use (WHDLoad, JST, SKick, etc).
+* Use newer version of uae-configuration, OSEmu.400.
+* Added support for .xz-compressed files.
+* GUI options to toggle game mode / governor warning on Linux.
+
+Version 2.9.10dev:
+
+* Support WHDLoad versions 18.4 and 18.5 (game database).
+* Revert fullscreen_mode to default when upgrading from older versions.
+* Hide the fullscreen mode button from quick settings panel.
+* Fix OpenRetro.org login, rebranded oagd.net to openretro.org.
+* Use requests library for all http(s) communication, fixes macOS cert issue.
+
+Version 2.9.9dev:
+
+* Support hd_requirements = xpkmaster.library.
+* Use https:// for more fs-uae.net and openretro.org communication.
+* Only preselect the favorite variant if the files are found.
+* Added 8BitDo controller configurations, updated dualshock 3 for Linux.
+* Index uncompressed content of .gz/.adz/.roz files.
+* Ignore .lha files when lhafile extension is not present.
+* Imported updated translations from crowdin.com.
+
+Version 2.9.8dev:
+
+* Support new whdload_quit_key option with online game database.
+* Disabled (global) whdload_quit_key setting, see new FS-UAE option.
+* Fixed problem on Windows where devices were sometimes not detected.
+* Remove kickstart warnings when not using Amiga platform.
+* Added elapsed time to log file (to debug startup time).
+* Imported updated translations from crowdin.com.
+
+Version 2.9.7dev:
+
+* Fix detection of Windows 10.
+* Support building with latest version of MSYS2.
+* Include quick setting to toggle display of bezel.
+* Quite a bit of changes, but many related to non-Amiga platforms.
+
+Version 2.9.6dev:
+
+* Imported updated translations from crowdin.com.
+* Moved additional game databases to a separate settings page.
+
+Version 2.9.5dev:
+
+* Added support for WHDLoad 18.3.
+* New quick settings panel (initial version) with toggle button.
+* Tweaked Fusion Adwaita theme colors to better match recent GNOME theme.
+* Controller configs for 8Bitdo SFC30 and Zero gamepads.
+* Controller config for DualShock 3 in bluetooth mode on Linux.
+* Make configurations list wider when window width is quite large.
+* Remember last selected game list on startup.
+* Lots of changes for non-Amiga/CDTV/CD32 game support.
+* New GUI setting to enable use of additional game platforms.
+* Disable config controls when loading a non-Amiga platform game.
+* Fix check for startup-sequence when determining if an archive is WHDLoad.
+
+
+Version 2.9.4dev:
+
+* Try to use config from game database when launching with a WHDLoad archive.
+* New startup argument --no-auto-detect-game to disable the above feature.
+* Save directory based on archive name when launching with an archive.
+* Fixed a bug where rating icons could disappear from variants list.
+* New option whdload_preload, defaults to 1 (change in behavior).
+* More language flags for the status bar.
+* New option to toggle close buttons in dialogs.
+  FIXME: Not in all dialogs yet.
+* New reset to defaults button on settings pages.
+  FIXME: GUI does not update yet.
+
+Version 2.9.3dev:
+
+* Fix for published/unpublished status of variants.
+* Extract WHDLoad arguments from .info file when loading a WHDLoad archive.
+* Set floppy drive volume (empty) to 0 when starting with a WHDLoad archive.
+* Show error message when version started is too old (cannot read databases).
+* New option whdload_quit_key to set global quit key, added to settings UI.
+* Renamed "Joystick" to "Controller" in settings dialog.
+* Improved look on Windows 10.
+* Updated look for the settings dialog.
+* Updated button links to option docs.
+* Updated FS-UAE Launcher icon.
+* CDTV games (from database) did not set CDTV model.
+
+Version 2.9.2dev:
+
+* Try ralphschmidt-cyberstorm-ppc-4471.rom if cyberstormppc.rom is not found.
+* Also look for ralphschmidt-cyberstorm-ppc-4471.rom in Amiga Forever dir.
+* Fix file name when saving controller configs on macOS.
+* Fix configurations not showing up since 2.9.1dev.
+* Indicate unpublished variants in variants list.
+* When enabling "unpublished" entries, list unpublished variants last.
+* Imported updated translations from crowdin.com.
+
+Version 2.9.1dev:
+
+* Added requests python library, start using for HTTPS support.
+* Removed six python library.
+* Sync "unpublished" games from the online game database, option to show.
+* Added UI control for joystick_port_0_autoswitch.
+* Can install kick33180.A500 / kick33180.A500.RTB for WHDLoad.
+* Fixed save state dir when starting with UUID parameter.
+
+Version 2.9.0dev:
+
+* New option whdload_boot_dir must be used to enable an old feature,
+  previously it was enabled by the presence of Hard Drives/WHDLoad.
+* Removed some debug code left by accident (causing rating variants to fail).
+* Make game scanner more forgiving if parent game uuid is not found.
+* Fixed problem where rating could be reset for first loaded game/variant.
+* New experimental option: relative_temp_feature.
+
+Version 2.7.15dev:
+
+* Imported updated translations from crowdin.com.
+
+Version 2.7.14dev:
+
+* Fixed recently introduced problem using joystick configuration tool.
+* A3000 chip RAM was erroneously set to 1 MB.
+* Added new languages to language selector: Esperanto, Dutch and Hungarian.
+* Imported updated translations from crowdin.com.
+
+Version 2.7.13dev:
+
+* Show launch dialog when running configs directly from command line.
+* Show launch errors (if any) in error message box when running from cmdline.
+* Use expect_version option to verify that FS-UAE version matches.
+* Launcher can be started with a zip/lha file containing disk images [jbl007].
+* Launcher can be started with more than one floppy image path as
+  command line arguments.
+* Launcher can be started with more than one CD-ROM image path as
+  command line arguments (will default to CD32 model in this case).
+* Properly load last config file (if applicable) when starting.
+* Unsaved config options will no longer be restored on startup (last
+  used game or config will be fully reloaded).
+* When using --config:key=value options, start with empty config (unless
+  a specific config is loaded via the command line).
+* Store maximized = 0 state properly when window is unmaximized.
+* Imported updated translations from crowdin.com.
+
+Version 2.7.12dev:
+
+* Added settings for for FS-UAE Arcade.
+* Minor fixes for scan/refresh dialogs.
+* Fix for the xrandr refresh rate detector.
+* Change variant rating buttons into a choice control.
+* Fixed rating variants (broke in 2.7.10dev).
+* More code cleanup.
+
+Version 2.7.11dev:
+
+* Revert to HTTP due to certificate validation not working properly.
+
+Version 2.7.10dev:
+
+* It is now possible (but highly discouraged) to put config options in
+  advanced settings to function as global defaults. You will get a
+  warning message on the status bar if you do this.
+* If a required ROM is not find, be more specific about which one.
+* Launch dialog replaced with "inline" status information.
+* Disable start button while FS-UAE is running.
+* Notice on status bar when custom config options are in use.
+* Warning on status bar when custom uae_* config options are in use.
+* Config controls show auto-selected value.
+* GUI indicates what floppy/CD drives are currently enabled.
+* Removed uaegfx_card control, automatically change config to graphics_card.
+* Fixed recently introduced bug in memory override selectors.
+* Stop button in game database sync dialog with repeated errors works now.
+* Some minor UI adjustments to the configuration panels.
+* Added GUI selectors for JIT compiler, dongle type, save_disk, network_card,
+  freezer_cartridge and more.
+* Moved drive count selectors to the floppy/CD tabs.
+* Join IRC netplay lobby specific to the FS-UAE major/minor version.
+* Use https://fs-uae.net and https://openretro.org URLs.
+* Fixed a compatibility issue with Qt 5.2 (availableGeometryChanged).
+* Cached images can be read from pre-generated zip files to reduce the
+  amount of small files.
+* Force the kickstarts directory to be included in file scanner.
+* Game list selector entry was not respected after updating the game db.
+
+Version 2.7.9dev:
+
+* Warn about old plugin versions, if detected.
+* Detect ~/.wine/users/Public/Documents/Amiga Files, if present.
+* Some changes to the settings dialog, video pages merged from 3 to 2.
+* Scanned files were not stored with proper relative paths on Windows.
+* New GUI controls for monitor, fullscreen mode, video sync and monitor info.
+* New settings control for starting FS-UAE with full keyboard emulation.
+* Fixed issue when you have a mouse with the same device name as a joystick.
+* More compact binary distributions, far fewer data files.
+* OS X: New skeleton .app launchers for portable suite.
+* Windows: Proxy executables passes on arguments.
+* CD-based games are now downloadable from OAGD.net locker (if the user has
+  them stored there).
+* Recognize .ccd CD variants from the online game database.
+
+Version 2.7.8dev:
+
+* You can add custom config on startup (--config:key=value). Especially
+  useful when auto-launching games and you want to override config.
+* You can start with custom settings (--settings:key=value). Note that the
+  changed settings will be permanent / saved.
+* Make distinction between Amiga device type and host device more explicit.
+* Made launch dialog non-modal.
+* Net play feature is enabled by default.
+* Moved net play UI into a separate window.
+* Clear search field when changing game/config list in dropdown.
+* All .sqlite databases moved into Data/Databases.
+* Some user interface adjustments.
+* Quite a bit of code cleanup and some restructuring.
+
+Version 2.7.7dev:
+
+* Always sort variant list in rated order from oagd.net, but prefer
+  locally available variants.
+* Automatically scan $BASE/AmigaForever/Amiga Files/Shared/rom for Kickstarts.
+* Automatically add $BASE/AmigaForever/Amiga Files to file scanner.
+* Kickstart import: Show how many ROM files were imported (or warn if none).
+* Blacklist mouse_integration from advanced settings (use per-config instead).
+* Added support for WHDLoad 18.2, set as default version.
+
+Version 2.7.6dev:
+
+* Most dialogs are non-modal again.
+* Misc user interface updates.
+
+Version 2.7.5dev:
+
+* Remember maximized state.
+
+Version 2.7.4dev:
+
+* Fixed bug when base-dir in config file had a trailing slash.
+* Imported updated translations from crowdin.com.
+
+Version 2.7.2dev:
+
+* Fixed /hostgame netplay command (server was started on wrong port).
+
+Version 2.5.41dev:
+
+* Support FS-UAE environment variables in advanced settings.
+* Fix appearance settings when theme is set to standard.
+* Imported updated translations from crowdin.com.
+
+Version 2.5.40dev:
+
+* New option launcher_font_size.
+* Enable screenshot bar for 1280x720 resolution.
+* Launcher WHDLoad zip (command line): use A1200 model.
+
+Version 2.5.39dev:
+* CD images for database games will now be extracted from archives on demand.
+  (there will always be a temp copy made right now, even when not needed).
+* If you give the launcher (command line) the path to a zip or lha, it will
+  try to find a contained WHDLoad slave and configure an A600 + 8MB fast RAM
+  and start FS-UAE.
+* Updated Info.plist and specified 10.7.0 as minimum OS X version.
+* Added version update check for beta branch.
+* Imported updated translations from crowdin.com.
+
+Version 2.5.38dev:
+
+* Updated joystick configuration dialog.
+* Save SDL 2.0 GUIDs (and more info) in the controller configurations.
+* Configuration dialog: load builtin config if no user config exists.
+* Imported updated translations from crowdin.com.
+
+Version 2.5.37dev:
+
+* Fixed bug in login window, added close buttons to login/logout.
+* Fixed OAGD.net locker uploader (really, this time).
+* Added new logging options panel to settings dialog.
+* Imported updated translations from crowdin.com.
+
+Version 2.5.35dev:
+
+* Added All Games / All Configurations to drop-down.
+* Nicer behavior when kickstart ROM for chosen model is missing.
+* Moved more warnings and information to status bar.
+* Fixed handling of downloadable games.
+* Use Fusion QT style on all platforms by default.
+* Default to Fusion Adwaita style variant when running under GNOME 3.
+* Show warning icon in settings if option is overriden by configuration.
+* Fixed OAGD.net locker uploader.
+* New additional configuration page.
+* Moved custom configuration (button) to additional config page.
+* Removed some "noise" from custom configuration and advanced settings.
+
+Version 2.5.34dev:
+
+* Changed tab panel appearance on OS X to match other platforms.
+* Renamed language prefs to appearance prefs, added launcher theme option.
+* Close login dialog before opening database refresh dialog.
+* Settings UI for specifying empty floppy drive volume (or disabling it).
+* Added keyboard settings to configure equals/insert/backslash/less mapping.
+* Added support for WHDLoad 18.1, set as default version.
+* Replaced some icons, added new rom/ram icon.
+* Fixed an issue with the new CPU selection.
+
+Version 2.5.33dev:
+
+* FS-UAE Launcher / Arcade defaults to require PyQt5 now.
+* Minimum OS X version (for official builds) is now 10.7 due to QT 5.5.
+* Updated GUI layout.
+* More expansion config controls (cpu, accelerator, graphics card, ++).
+* Fixed issue with get_real_case usage on case sensitive systems (Linux).
+* Login / logout entries in main menu did not update correctly.
+* Redesigned model selection GUI (more room for additional models / presets).
+* More Amiga model presets added.
+* Do not write empty FS-UAE config values (less noise in the logs).
+* Do not write known launcher-only settings to temp FS-UAE config file.
+* Do not use a temporary kickstart dir, so FS-UAE will find accelerator ROMs.
+* hard_drive_x_label and hard_drive_x_priority did not show in custom config.
+
+Version 2.5.32dev:
+
+* Added settings GUI control to select full-screen monitor.
+
+Version 2.5.31dev:
+
+* Imported updated translations from crowdin.com.
+
+Version 2.5.30dev:
+
+* Fixed loading with variant UUID on command line.
+* Added a basic WHDLoad settings page (tweak splash delay,
+  show directory for WHDLoad.key file).
+* Fixed loading of .fs-uae config files containg % character in values.
+* Fixed on-demand download of floppy images from HTTP.
+* Remove some inefficiences when selecting database games in config list.
+* Fixed look of variant choice control under OS X.
+
+Version 2.5.28dev:
+
+* Fixed Windows console appearing when using portable launchers.
+* Automatically maximize when desktop height <= 768.
+* Support for multiple game databases.
+* Remove window border when running under GNOME 3 with desktop height <= 768.
+
+Version 2.5.25dev:
+
+* Fixed problem locating translation files in some cases.
+* Reverted to preferring QT4 for now.
+* Added several joystick configs [johanpalmqvist].
+
+Version 2.5.24dev:
+
+* New user interface layout (config list on the left).
+* Improved support for lower-resolution displays.
+* Preliminary support for new config visualization (config_feature=1).
+* Prefer QT5 when running the launcher, QT4 when running the arcade interface.
+* Fixed bug preventing Windows version from joining the net play lobby.
+* Also look for ../bin/fs-uae on Linux/Unix.
+
+Version 2.5.23dev:
+
+* Fixed joystick configurations, added --add-dummy-joystick arg for testing.
+* Require at least Python 3.2 to start, if not, abort with error.
+* Code cleanup, removed Python 2.x compatibility code.
+* setup.py: reject installation to default python library dir.
+* Makefile: Added separate install, install-program and install-data targets.
+
+Version 2.5.22dev:
+
+* Add support for WHDLoad 18.0.
+* Make WHDLoad 18.0 the default WHDLoad version.
+
+Version 2.5.21dev:
+
+* Allow clearing preferred joystick(s) via settings UI.
+* Can start with path to .fs-uae file as final argument (auto-runs
+  configuration via FS-UAE Launcher).
+* Can start with game uuid as final argument (auto-runs preferred variant).
+* Can start with variant uuid as final argument (autu-runs specified variant).
+* Fixed issue caused by QT normalizing (NFC) paths on OS X.
+
+Version 2.5.19dev:
+
+* Fixed launcher net play GUI (broken in dev versions since the move to QT).
+
+Version 2.5.15dev:
+
+* Added awareness of required ROMs for Picasso IV, Cyberstorm PPC.
+* Added new models A4000/PPC, A4000/OS4, A4000, A500/512K.
+* Added .bin extension to rom scanner (useful for Picasso IV ROM).
+
+Version 2.5.12dev:
+
+* Fixed bugs in ADF and HDF creator.
+
+Version 2.5.8dev:
+
+* Added settings GUI control for keyboard_input_grab option.
+
+Version 2.5.6dev:
+
+* Add .nobackup file to Documents/FS-UAE/Cache.
+* Fixed a bug in adf/hdf creator.
+* Include "show all database games" (database_show_games = 0) in settings.
+
+Version 2.5.5dev:
+
+* Added GUI control for option database_show_adult.
+* Automatically update game list when database_show_[games/adult] changes.
+* Fixed (python 3) bug in download hard drive via HTTP feature.
+
+Version 2.5.4dev:
+
+* Fixed startup error when base-dir config file is used.
+
+Version 2.5.3dev:
+
+* Disable strict mode when parsing .fs-uae files.
+
+Version 2.5.2dev:
+
+* Can download kickstarts for WHDLoad from OAGD.net locker.
+* Python 3 compatibility fixes.
+* Python 3.2 is the target minimum requirement now.
+* PyQt4 is the preferred Qt Python API if found.
+* Windows / OS X packages are assembled with cx_Freeze.
+* Dialogs work better in desktop environments w/o close buttons.
+
+Version 2.5.1dev:
+
+* Case insensitive kickstart scan on startup.
+* Added support for Greek language.
+
+Version 2.5.0dev:
+
+* Windows portable version didn't store relative paths.
+* Properly locate A500 kickstart on first startup when it exists.
+* Don't refresh the online database when running the file scanner.
+* Game database changes for better forward compatibility.
+* Adult filter for game database, enabled by default.
+* Use search term tag:adult to show adult games.
+* New option database_show_adult to show adult games by default.
+* Can search for quoted words to require exact word match.
+* Fixed some translated strings used incorrectly.
+* Updated translations: pl [grimi].
+* Fixed multiple file selection when using PyQt.
+* Added 256 kB chip RAM to the chip memory selector.
+* Updated translations: de [jbl007], es [albconde], it [Speedvicio],
+  da [tomse], nb.
+* Fixed a bug preventing hd_requirements = workbench from working.
+* Fixed a bug which is also a syntax error with Python < v2.7.
+* Fixed a potential startup problem when PATH has non-ASCII
+  characters.
