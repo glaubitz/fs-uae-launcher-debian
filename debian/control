@@ -1,23 +1,31 @@
 Source: fs-uae-launcher
 Section: otherosfs
-Priority: extra
-X-Python3-Version: >= 3.2
-Maintainer: Frode Solheim <frode@fs-uae.net>
-Build-Depends: debhelper (>= 9), dh-python, python3-all (>= 3.2), python3-setuptools
-Standards-Version: 3.9.4
-Homepage: http://fs-uae.net/
+Priority: optional
+Maintainer: John Paul Adrian Glaubitz <glaubitz@physik.fu-berlin.de>
+Build-Depends: debhelper-compat (= 13),
+               dh-python,
+               python3-all,
+               python3-setuptools
+Standards-Version: 4.5.1
+Homepage: http://fs-uae.net
+Vcs-Browser: https://salsa.debian.org/debian/fs-uae-launcher
+Vcs-Git: https://salsa.debian.org/debian/fs-uae-launcher.git
 
 Package: fs-uae-launcher
 Architecture: all
-Depends:
- ${python3:Depends},
- ${misc:Depends},
- python3-lhafile,
- python3-opengl,
- python3-pyqt5,
- python3-pyqt5.qtopengl,
- python3-requests,
- python3-setuptools,
- fs-uae
-Description: Launcher and configuration program for FS-UAE.
- FS-UAE Launcher is a graphical user interface for setting up FS-UAE.
+Depends: fs-uae,
+         python3-opengl,
+         python3-pyqt5,
+         python3-pyqt5.qtopengl,
+         python3-requests,
+         python3-setuptools,
+         ${misc:Depends},
+         ${python3:Depends}
+Recommends: python3-lhafile
+Description: Launcher and configuration program for FS-UAE
+ FS-UAE is a cross-platform Amiga emulator based on updated emulation code
+ from WinUAE. FS-UAE uses SDL for input, OpenAL for audio and OpenGL
+ for graphics.
+ .
+ This package contains FS-UAE Launcher, a graphical user interface for
+ setting up FS-UAE.
